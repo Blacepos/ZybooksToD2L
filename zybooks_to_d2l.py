@@ -62,8 +62,10 @@ def main():
 
     # TODO: process files in parallel
 
+    filenames = [s for s in os.listdir("imports") if s != ".gitignore"]
+
     with Pool() as pool:
-        pool.map(convert, os.listdir("imports"))
+        pool.map(convert, filenames)
 
 
 if __name__ == "__main__":
