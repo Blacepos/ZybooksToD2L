@@ -27,6 +27,8 @@ def read_zybooks(filename: str) -> Generator[ZybooksRow, None, None]:
         header = next(reader, None)
 
         for row in reader:
+            if len(row) <= 1:
+                continue
             yield tuple(islice(row, ZYBOOKS_ROW_EXPECTED_LEN))
 
 
