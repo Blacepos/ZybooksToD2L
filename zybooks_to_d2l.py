@@ -59,9 +59,7 @@ def convert(filename: str):
 
 
 def main():
-
-    # TODO: process files in parallel
-
+    
     filenames = [s for s in os.listdir("imports") if s != ".gitignore"]
 
     with Pool() as pool:
